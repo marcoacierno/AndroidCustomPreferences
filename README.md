@@ -2,6 +2,7 @@ AndroidCustomPreferences
 ========================
 
 Nothing of special, just some custom preferences i created for some of my projects. 
+Please report any bug/issue.
 
 
 Slider preference
