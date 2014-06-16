@@ -92,6 +92,7 @@ public class SliderPreference extends Preference
 
         }
 
+        // i used onStopTrackingTouch but you could need to save it manually if your application-target is TV too.
         @Override
         public void onStopTrackingTouch(SeekBar seekBar)
         {
