@@ -106,9 +106,9 @@ public class SliderPreference extends Preference
             {
                 persistInt(progress);
                 sliderValue = progress;
+                
+                Log.d(TAG, "Persist progress value: " + progress);
             }
-
-            Log.d(TAG, "Persist progress value: " + progress);
         }
     };
 }
