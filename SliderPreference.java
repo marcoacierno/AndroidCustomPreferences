@@ -102,6 +102,8 @@ public class SliderPreference extends Preference
         {
             int progress = seekBar.getProgress();
 
+            callChangeListener(progress);
+
             persistInt(progress);
             sliderValue = progress;
 
