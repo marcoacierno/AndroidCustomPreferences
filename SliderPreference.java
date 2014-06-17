@@ -18,15 +18,18 @@ public class SliderPreference extends Preference
     private final static String TAG = "SliderPreference";
 
     private int sliderValue;
+    private int maxValue;
 
     public SliderPreference(Context context, AttributeSet attrs, int defStyle)
     {
         super(context, attrs, defStyle);
+        maxValue = attrs.getAttributeIntValue("android", "max", 100);
     }
 
     public SliderPreference(Context context, AttributeSet attrs)
     {
         super(context, attrs);
+        maxValue = attrs.getAttributeIntValue("android", "max", 100);
     }
 
     public SliderPreference(Context context)
@@ -46,6 +49,7 @@ public class SliderPreference extends Preference
         SeekBar seekBar = new SeekBar(getContext());
         seekBar.setOnSeekBarChangeListener(seekBarChangeListener);
         seekBar.setProgress(sliderValue);
+        seekBar.setMax(maxValue);
 
         linearLayout.addView(seekBar);
         return linearLayout;
@@ -92,7 +96,7 @@ public class SliderPreference extends Preference
 
         }
 
-        // i used onStopTrackingTouch but you could need to save it manually if your application-target is TV too.
+        //// i used onStopTrackingTouch but you could need to save it manually if your application-target is TV too.
         @Override
         public void onStopTrackingTouch(SeekBar seekBar)
         {
